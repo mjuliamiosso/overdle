@@ -1,0 +1,85 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Hero {
+  id          Int       @id @default(autoincrement())
+  name        String
+  gender      String
+  role        String
+  affiliation String
+  region      String
+  releaseYear Int
+  quotes      Quote[]
+  abilities   Ability[]
+  emojis      Emoji[]
+  games       Game[]
+}
+
+model Quote {
+  id     Int    @id @default(autoincrement())
+  hero   Hero   @relation(fields: [heroId], references: [id])
+  heroId Int
+  text   String
+  Game   Game[]
+}
+
+model Ability {
+  id       Int    @id @default(autoincrement())
+  hero     Hero   @relation(fields: [heroId], references: [id])
+  heroId   Int
+  name     String
+  imageUrl String
+  Game     Game[]
+}
+
+model Emoji {
+  id            Int    @id @default(autoincrement())
+  hero          Hero   @relation(fields: [heroId], references: [id])
+  heroId        Int
+  emojiSequence String
+  Game          Game[]
+}
+
+model Game {
+  id        Int       @id @default(autoincrement())
+  gameType  GameType
+  date      DateTime  @default(now())
+  hero      Hero      @relation(fields: [heroId], references: [id])
+  heroId    Int
+  quote     Quote?    @relation(fields: [quoteId], references: [id])
+  quoteId   Int?
+  ability   Ability?  @relation(fields: [abilityId], references: [id])
+  abilityId Int?
+  emoji     Emoji?    @relation(fields: [emojiId], references: [id])
+  emojiId   Int?
+  attempts  Attempt[]
+}
+
+model User {
+  id       Int       @id @default(autoincrement())
+  attempts Attempt[]
+}
+
+model Attempt {
+  id        Int      @id @default(autoincrement())
+  user      User     @relation(fields: [userId], references: [id])
+  userId    Int
+  game      Game     @relation(fields: [gameId], references: [id])
+  gameId    Int
+  guess     String
+  isCorrect Boolean
+  createdAt DateTime @default(now())
+}
+
+enum GameType {
+  CLASSIC
+  QUOTE
+  ABILITY
+  EMOJI
+}

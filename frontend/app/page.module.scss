@@ -1,0 +1,54 @@
+.home {
+  min-height: 100dvh;
+  background: black;
+  background-image: url('../public/ow-background.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 100px 0;
+  display: flex;
+  align-items: center;
+
+  div {
+    text-align: center;
+  }
+}
+
+.logo {
+  width: 300px;
+
+  @media (min-width: 641px) {
+    width: 445px;
+
+  }
+}
+
+.text {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 40px;
+  margin-top: 10px;
+
+  @media (min-width: 641px) {
+    font-size: 2rem;
+  }
+}
+
+.gameModes {
+  display: grid;
+  place-items: center;
+  gap: 20px;
+
+  @media (min-width:641px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width:950px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width:1220px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

@@ -1,0 +1,62 @@
+@import '../../styles/variables';
+
+.card {
+  position: relative;
+  width: 281px;
+  height: 398px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 14px;
+
+  &:hover {
+    background-image: attr(data-hover-background url);
+    outline: 3px solid white;
+    box-shadow: 0 0 15px 5px #ffffff7a;
+    transform: scale(1.1);
+    transition: .5s all ease;
+
+    .text {
+      background-color: transparent;
+      color: white;
+      transition: .5s all ease;
+    }
+
+    .icon {
+      display: none;
+      transition: .5s all ease;
+    }
+  }
+}
+
+.icon {
+  position: absolute;
+  right: 38%;
+  top: 25%;
+  font-size: 4rem;
+}
+
+.text {
+  position: absolute;
+  bottom: -2px;
+
+  text-align: center;
+  background-color: white;
+  width: 100%;
+  padding: 20px;
+  border-radius: 0 0 14px 14px;
+  height: 129px;
+  color: $text-color;
+
+  .title {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+
+  .description {
+    font-size: .95rem;
+    text-transform: uppercase;
+  }
+}

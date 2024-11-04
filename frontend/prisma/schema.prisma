@@ -8,7 +8,7 @@ generator client {
 }
 
 model Hero {
-  id          Int       @id @default(autoincrement())
+  id          Int        @id @default(autoincrement())
   name        String
   gender      String
   role        String
@@ -19,14 +19,16 @@ model Hero {
   abilities   Ability[]
   emojis      Emoji[]
   games       Game[]
+  LastHero    LastHero[]
 }
 
 model Quote {
-  id     Int    @id @default(autoincrement())
-  hero   Hero   @relation(fields: [heroId], references: [id])
-  heroId Int
-  text   String
-  Game   Game[]
+  id       Int    @id @default(autoincrement())
+  hero     Hero   @relation(fields: [heroId], references: [id])
+  heroId   Int
+  text     String
+  audioUrl String
+  Game     Game[]
 }
 
 model Ability {
@@ -39,26 +41,27 @@ model Ability {
 }
 
 model Emoji {
-  id            Int    @id @default(autoincrement())
-  hero          Hero   @relation(fields: [heroId], references: [id])
+  id            Int      @id @default(autoincrement())
+  hero          Hero     @relation(fields: [heroId], references: [id])
   heroId        Int
-  emojiSequence String
+  emojiSequence String[]
   Game          Game[]
 }
 
 model Game {
-  id        Int       @id @default(autoincrement())
-  gameType  GameType
-  date      DateTime  @default(now())
-  hero      Hero      @relation(fields: [heroId], references: [id])
-  heroId    Int
-  quote     Quote?    @relation(fields: [quoteId], references: [id])
-  quoteId   Int?
-  ability   Ability?  @relation(fields: [abilityId], references: [id])
-  abilityId Int?
-  emoji     Emoji?    @relation(fields: [emojiId], references: [id])
-  emojiId   Int?
-  attempts  Attempt[]
+  id         Int        @id @default(autoincrement())
+  gameType   GameType
+  date       DateTime   @default(now())
+  hero       Hero       @relation(fields: [heroId], references: [id])
+  heroId     Int
+  quote      Quote?     @relation(fields: [quoteId], references: [id])
+  quoteId    Int?
+  ability    Ability?   @relation(fields: [abilityId], references: [id])
+  abilityId  Int?
+  emoji      Emoji?     @relation(fields: [emojiId], references: [id])
+  emojiId    Int?
+  attempts   Attempt[]
+  lastHeroes LastHero[]
 }
 
 model User {
@@ -75,6 +78,15 @@ model Attempt {
   guess     String
   isCorrect Boolean
   createdAt DateTime @default(now())
+}
+
+model LastHero {
+  id       Int      @id @default(autoincrement())
+  game     Game     @relation(fields: [gameId], references: [id])
+  gameId   Int
+  hero     Hero     @relation(fields: [heroId], references: [id])
+  heroId   Int
+  dateUsed DateTime @default(now())
 }
 
 enum GameType {

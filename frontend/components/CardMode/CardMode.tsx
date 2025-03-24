@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react';
+import React, { ReactNode, useState } from 'react';
 import styles from './CardMode.module.scss';
 import Link from 'next/link';
 
@@ -8,7 +8,7 @@ interface CardModeProps {
   link: string;
   background: string;
   hoverBackground: string;
-  icon: string;
+  icon: ReactNode;
   color: string;
   title: string;
   description: string;

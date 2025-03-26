@@ -25,7 +25,7 @@ const MenuButton: React.FC<MenuButtonProps> = ({
       <div className={clsx(styles.icon, styles[border])} style={{ background }}>
         {icon}
       </div>
-      <div className={clsx(styles.text, styles[show])}>
+      <div className={ styles[show]}>
         <p className={styles.text}>{text}</p>
       </div>
     </Link>

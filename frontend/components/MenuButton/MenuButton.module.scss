@@ -51,9 +51,5 @@
 }
 
 .block {
-  display: none;
-
-  @media (min-width: 641px) {
-    display: block;
-  }
+  display: block;
 }

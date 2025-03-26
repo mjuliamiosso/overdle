@@ -7,6 +7,7 @@ import { FaRegSmile } from "react-icons/fa";
 import { HiOutlineFire } from "react-icons/hi";
 import QuestionBox from "@/components/QuestionBox/QuestionBox";
 import AnswerClassic from "@/components/AnswerClassic/AnswerClassic";
+import Answer from "@/components/Answer/Answer";
 
 const page = () => {
   return (
@@ -48,6 +49,7 @@ const page = () => {
           release={"2016"}
           background={"#6DCF4A"}
         />
+        <Answer hero={"/tracer-icon.jpg"} name={"Tracer"} background={"#6DCF4A"} />
       </div>
     </section>
   );

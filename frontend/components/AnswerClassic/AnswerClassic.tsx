@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import styles from "./AnswerClassic.module.scss";
-import clsx from "clsx";
 
 interface AnswerClassicProps {
   hero: string;
@@ -26,24 +25,24 @@ const AnswerClassic: React.FC<AnswerClassicProps> = ({
     <div className={styles.heroInfo}>
       <Image
         src={hero}
-        width={50}
-        height={50}
+        width={100}
+        height={100}
         alt={"hero"}
-        className={clsx(styles.box, styles.box)}
+        className={styles.box}
       />
-      <div className={clsx(styles.box, styles.box)} style={{ background }}>
+      <div className={styles.box} style={{ background }}>
         {gender}
       </div>
-      <div className={clsx(styles.box, styles.box)} style={{ background }}>
+      <div className={styles.box} style={{ background }}>
         {role}
       </div>
-      <div className={clsx(styles.box, styles.box)} style={{ background }}>
+      <div className={styles.box} style={{ background }}>
         {affiliation}
       </div>
-      <div className={clsx(styles.box, styles.box)} style={{ background }}>
+      <div className={styles.box} style={{ background }}>
         {region}
       </div>
-      <div className={clsx(styles.box, styles.box)} style={{ background }}>
+      <div className={styles.box} style={{ background }}>
         {release}
       </div>
     </div>

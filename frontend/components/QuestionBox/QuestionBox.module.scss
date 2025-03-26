@@ -1,0 +1,33 @@
+@import '../../styles/variables';
+
+.questionBox{
+    background-color: $background-color;
+    width: 100vw;
+    color: #fff;
+    padding: 30px 0;
+}
+
+.text{
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.clue{
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.input{
+    background: #12121f;
+    color: #fff;
+    font-size: 1.2rem;
+    min-width: 350px;
+    max-width: 600px;
+    width: 100%;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+}

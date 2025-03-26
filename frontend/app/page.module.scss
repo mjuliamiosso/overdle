@@ -1,7 +1,7 @@
 .home {
   min-height: 100dvh;
   background: black;
-  background-image: url('../public/ow-background.png');
+  background-image: url("../public/ow-background.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -19,7 +19,6 @@
 
   @media (min-width: 641px) {
     width: 445px;
-
   }
 }
 
@@ -35,20 +34,25 @@
   }
 }
 
-.gameModes {
-  display: grid;
-  place-items: center;
+.cardGameModes {
+  display: none;
+  
+  @media (min-width: 1220px) {
+    display: grid;
+    place-items: center;
+    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+
+.header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 20px;
 
-  @media (min-width:641px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (min-width:950px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  @media (min-width:1220px) {
-    grid-template-columns: repeat(4, 1fr);
+  @media (min-width: 1220px) {
+    display: none;
   }
 }

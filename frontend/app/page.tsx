@@ -2,10 +2,10 @@ import React from "react";
 import styles from "./page.module.scss";
 import CardMode from "../components/CardMode/CardMode";
 import MenuButton from "@/components/MenuButton/MenuButton";
-import { HiQuestionMarkCircle, HiFire, HiOutlineFire  } from "react-icons/hi";
-import { AiFillMessage, AiOutlineMessage  } from "react-icons/ai";
+import { HiQuestionMarkCircle, HiFire, HiOutlineFire } from "react-icons/hi";
+import { AiFillMessage, AiOutlineMessage } from "react-icons/ai";
 import { MdOutlineQuestionMark } from "react-icons/md";
-import { FaRegSmile, FaSmile  } from "react-icons/fa";
+import { FaRegSmile, FaSmile } from "react-icons/fa";
 
 const Home = () => {
   return (

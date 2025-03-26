@@ -1,9 +1,10 @@
-@import '../../styles/variables';
+@import "../../styles/variables";
 
 .menuButton {
   display: flex;
   align-items: center;
-  width: 290px;
+  max-width: 290px;
+  min-width: 70px;
 }
 
 .icon {
@@ -23,7 +24,11 @@
 }
 
 .noRadius {
-  border-radius: 8px 0 0 8px;
+  border-radius: 8px;
+
+  @media (min-width: 641px) {
+    border-radius: 8px 0 0 8px;
+  }
 }
 
 .text {
@@ -33,7 +38,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   background-color: #fff;
   color: $text-color;
   font-size: 28px;
@@ -46,5 +51,9 @@
 }
 
 .block {
-  display: block;
+  display: none;
+
+  @media (min-width: 641px) {
+    display: block;
+  }
 }

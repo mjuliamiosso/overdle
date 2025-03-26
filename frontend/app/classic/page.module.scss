@@ -1,0 +1,29 @@
+.classic {
+  min-height: 100dvh;
+  background: black;
+  background-image: url("../../public/ow-background.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 50px 0;
+  display: flex;
+
+  div {
+    text-align: center;
+  }
+}
+
+.logo {
+  width: 300px;
+  margin-bottom: 20px;
+
+  @media (min-width: 641px) {
+    width: 445px;
+  }
+}
+.header {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}

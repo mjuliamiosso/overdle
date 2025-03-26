@@ -28,3 +28,9 @@
     justify-content: center;
     gap: 20px;
 }
+
+.answersContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}

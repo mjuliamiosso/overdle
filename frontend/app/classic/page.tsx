@@ -6,6 +6,7 @@ import { AiOutlineMessage } from "react-icons/ai";
 import { FaRegSmile } from "react-icons/fa";
 import { HiOutlineFire } from "react-icons/hi";
 import QuestionBox from "@/components/QuestionBox/QuestionBox";
+import AnswerClassic from "@/components/AnswerClassic/AnswerClassic";
 
 const page = () => {
   return (
@@ -36,7 +37,18 @@ const page = () => {
           background={"#BD2FD4"}
         />
       </div>
-      <QuestionBox text={"Descubra o Herói de Overwatch de hoje!"}/>
+      <QuestionBox text={"Descubra o Herói de Overwatch de hoje!"} />
+      <div className={styles.answersContainer}>
+        <AnswerClassic
+          hero={"/tracer-icon.jpg"}
+          gender={"Feminino"}
+          role={"Dano"}
+          affiliation={"Overwatch"}
+          region={"Europa"}
+          release={"2016"}
+          background={"#6DCF4A"}
+        />
+      </div>
     </section>
   );
 };
